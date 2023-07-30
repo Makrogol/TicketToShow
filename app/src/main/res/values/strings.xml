@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- home_screen strings -->
+    <string name="luxury_village_string"> Luxury Village</string>
+
+    <!-- register_screen strings -->
+    <string name="ticket_to_show_welcome_text">Добро пожаловать в Ticket To Show</string>
+    <string name="registration_text">Регистрация</string>
+
+    <string name="button_register_text">Зарегистрироваться</string>
+    <string name="button_back_text">Назад</string>
+    <string name="confidence_politic_text">Нажимая на кнопку \"Зарегистрироваться\" Вы соглашаетесь c политикой конфиденциальности и на обработку персональных данных</string>
+    <string name="title_activity_main">activity_main</string>
+    <string name="your_name_register_screen_hint_text">Ваше имя</string>
+    <string name="email_address_register_screen_hint_text">Электронная почта</string>
+    <string name="password_register_screen_hint_text">Пароль</string>
+    <string name="confirm_password_register_screen_text">Подтвердите пароль</string>
+    <string name="app_name">Ticket To Show</string>
+    <string name="button_entry_text">Войти</string>
+    <string name="forgot_password_text">Забыли пароль?</string>
+    <string name="entry_text">Вход</string>
+    <string name="submit_email_text">Подтверждение почты</string>
+    <string name="enter_emil_code_text">Введите 4-х значный код, отправленный на example@mail.ru</string>
+    <string name="repeat_send_email_code_text">Отправить код повторно через 60 сек.</string>
+    <string name="concerts_home_screen_text">Концерты</string>
+
+</resources>
