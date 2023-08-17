@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity(), ActivityNavigator {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, HomeScreenFragment.newInstance())
             .commit()
-
     }
 
     override fun goToRegisterScreen() {

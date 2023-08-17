@@ -6,27 +6,22 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import com.example.tickettoshow.databinding.FragmentHomeScreenBinding
+import com.example.tickettoshow.databinding.FragmentProfileBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class HomeScreenFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedListener {
+class ProfileFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private lateinit var binding: FragmentHomeScreenBinding
+    private lateinit var binding: FragmentProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentHomeScreenBinding.inflate(inflater, container, false)
-        val adapter = ConcertShowAdapter()
-        binding.concertsRecyclerview.adapter = adapter
-//        adapter.addShows(listOf(
-//            DataShow(
-//
-//            )
-//        ))
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
+
         binding.bottomNavMenu.setOnNavigationItemSelectedListener(this)
+
         return binding.root
     }
 
@@ -45,10 +40,9 @@ class HomeScreenFragment : Fragment(), BottomNavigationView.OnNavigationItemSele
         return true
     }
 
-
     companion object {
 
         @JvmStatic
-        fun newInstance() = HomeScreenFragment()
+        fun newInstance() = ProfileFragment()
     }
 }

@@ -20,5 +20,4 @@
     <color name="bg_enter_email_code_color">#d9d9d9</color>
 
     <color name="bg_search_edit_text_color">#33EBEBEB</color>
-    <color name="item_recyclerview_low_text_color">#898989</color>
 </resources>
