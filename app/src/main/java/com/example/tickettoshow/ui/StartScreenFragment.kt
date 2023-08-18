@@ -1,42 +1,41 @@
-package com.example.tickettoshow
+package com.example.tickettoshow.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.tickettoshow.databinding.FragmentSubmitEmailBinding
+import com.example.tickettoshow.databinding.FragmentStartScreenBinding
 
 
-class SubmitEmailFragment : Fragment() {
+class StartScreenFragment : Fragment() {
 
-    private lateinit var binding: FragmentSubmitEmailBinding
+    private lateinit var binding: FragmentStartScreenBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSubmitEmailBinding.inflate(inflater, container, false)
+        binding = FragmentStartScreenBinding.inflate(inflater, container, false)
 
-        binding.registrationButton.setOnClickListener {
+        binding.entryButton.setOnClickListener {
             if (activity is ActivityNavigator) {
-                (activity as ActivityNavigator).goToHomeScreen()
+                (activity as ActivityNavigator).goToEntryScreen()
             }
         }
 
-        binding.backButton.setOnClickListener {
+        binding.registrationButton.setOnClickListener {
             if (activity is ActivityNavigator) {
                 (activity as ActivityNavigator).goToRegisterScreen()
             }
         }
 
         return binding.root
-
     }
 
     companion object {
 
         @JvmStatic
-        fun newInstance() = SubmitEmailFragment()
+        fun newInstance() = StartScreenFragment()
     }
 }

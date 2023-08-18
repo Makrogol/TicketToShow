@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeScreenFragment">
+    tools:context=".ui.HomeScreenFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,8 +21,10 @@
             android:layout_marginRight="5dp"
             android:background="@drawable/bg_search_edit_text"
             android:backgroundTint="@android:color/transparent"
+            android:clickable="true"
             android:drawableStart="@drawable/search_icon"
-            android:drawableEnd="@drawable/tts_home_screen_logo" />
+            android:drawableEnd="@drawable/tts_home_screen_logo"
+            android:focusable="true" />
 
         <TextView
             android:id="@+id/concerts_textview"
@@ -37,11 +39,14 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/concerts_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="80dp"
             android:orientation="horizontal"
-            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbHorizontal="@color/white"
+            android:scrollbars="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_concerts_recyclerview" />
     </LinearLayout>

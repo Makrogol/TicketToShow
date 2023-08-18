@@ -1,8 +1,9 @@
-package com.example.tickettoshow
+package com.example.tickettoshow.ui
 
 import android.os.Bundle
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tickettoshow.R
 import com.example.tickettoshow.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), ActivityNavigator {

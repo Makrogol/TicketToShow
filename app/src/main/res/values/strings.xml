@@ -23,8 +23,6 @@
     <string name="enter_emil_code_text">Введите 4-х значный код, отправленный на example@mail.ru</string>
     <string name="repeat_send_email_code_text">Отправить код повторно через 60 сек.</string>
     <string name="concerts_home_screen_text">Концерты</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

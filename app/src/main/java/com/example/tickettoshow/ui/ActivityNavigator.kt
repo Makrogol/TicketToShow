@@ -1,4 +1,4 @@
-package com.example.tickettoshow
+package com.example.tickettoshow.ui
 
 interface ActivityNavigator {
 

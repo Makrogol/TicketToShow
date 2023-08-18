@@ -1,4 +1,4 @@
-package com.example.tickettoshow
+package com.example.tickettoshow.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import com.example.tickettoshow.R
 import com.example.tickettoshow.databinding.FragmentCalendarBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -29,7 +30,7 @@ class CalendarFragment : Fragment(), BottomNavigationView.OnNavigationItemSelect
     override fun onNavigationItemSelected(item: MenuItem): Boolean = when(item.itemId) {
         R.id.bot_menu_home_screen -> routeTo(HomeScreenFragment.newInstance())
         R.id.bot_menu_profile_screen -> routeTo(ProfileFragment.newInstance())
-        R.id.bot_menu_calendar_screen -> routeTo(CalendarFragment.newInstance())
+        R.id.bot_menu_calendar_screen -> routeTo(newInstance())
         else -> false
     }
 

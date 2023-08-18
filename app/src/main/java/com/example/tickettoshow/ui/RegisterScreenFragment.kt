@@ -1,4 +1,4 @@
-package com.example.tickettoshow
+package com.example.tickettoshow.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.example.tickettoshow
+package com.example.tickettoshow.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.tickettoshow.databinding.FragmentEntryScreenBinding
-import com.example.tickettoshow.databinding.FragmentStartScreenBinding
 
 class EntryScreenFragment : Fragment() {
 
