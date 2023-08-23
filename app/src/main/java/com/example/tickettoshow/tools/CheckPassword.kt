@@ -26,11 +26,3 @@ fun checkPassword(password: String): Boolean{
 
     return (digitInPassword and capitalLetterInPassword and lowercaseLetterInPassword and specialCharacterInPassword)
 }
-
-fun main(){
-    println(checkPassword(""))
-    println(checkPassword("qwerty"))
-    println(checkPassword("qwerty12"))
-    println(checkPassword("Qwerty12"))
-    println(checkPassword("Qwerty12!"))
-}
