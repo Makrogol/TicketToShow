@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DescriptionEventFragment">
+    tools:context=".application.view.eventdescriptionscreen.EventDescriptionFragment">
 
+    <include layout="@layout/part_result"/>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -56,7 +57,8 @@
             android:layout_height="wrap_content"
             android:layout_row="4"
             android:layout_column="0"
-            android:layout_columnSpan="2" />
+            android:layout_columnSpan="2"
+            android:ellipsize="end" />
 
 
         <TextView
@@ -90,19 +92,19 @@
 
         <TextView
             android:id="@+id/address_text_textview"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_row="8"
             android:layout_column="0"
-            android:layout_columnSpan="2"/>
+            android:layout_columnSpan="2" />
 
         <TextView
             android:id="@+id/address_textview"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_row="9"
-            android:layout_columnSpan="2"
-            android:layout_column="0"/>
+            android:layout_column="0"
+            android:layout_columnSpan="2" />
 
     </GridLayout>
 
