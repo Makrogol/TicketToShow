@@ -13,11 +13,11 @@ class ConcertEventAdapter(
     private val listener: Listener
 ) : RecyclerView.Adapter<ConcertEventAdapter.ConcertEventViewHolder>(), View.OnClickListener {
 
-    private val _events = mutableListOf<EventListItem>()
-    val events: List<EventListItem> = _events
+    private val _events = mutableListOf<DataEvent>()
+    val events: List<DataEvent> = _events
 
     @SuppressLint("NotifyDataSetChanged")
-    fun addShows(shows: List<EventListItem>) {
+    fun addShows(shows: List<DataEvent>) {
         _events.addAll(shows)
         notifyDataSetChanged()
     }
@@ -45,17 +45,11 @@ class ConcertEventAdapter(
         holder.itemView.tag = _events[position]
         holder.binding.root.setOnClickListener(this)
 
-        val eventItem = _events[position]
-        val event = eventItem.event
+        val event = _events[position]
         with(holder.binding) {
 
-            if (eventItem.isInProgress) {
-                itemShowPosterImageview.visibility = View.GONE
-                root.setOnClickListener(null)
-            } else {
-                itemShowPosterImageview.visibility = View.VISIBLE
-                root.setOnClickListener {listener.onEventClick(event)}
-            }
+            itemShowPosterImageview.visibility = View.VISIBLE
+            root.setOnClickListener { listener.onEventClick(event) }
 
             itemShowNameTextview.text = event.name
             itemShowAddressTextview.text = event.address

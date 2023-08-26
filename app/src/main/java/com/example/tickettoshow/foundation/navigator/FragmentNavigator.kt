@@ -44,6 +44,13 @@ class FragmentNavigator(
         activity.supportFragmentManager.unregisterFragmentLifecycleCallbacks(fragmentCallbacks)
     }
 
+    fun onBackPressed() {
+        val f = getCurrentFragment()
+        if (f is BaseFragment) {
+            f.viewModel.onBackPressed()
+        }
+    }
+
     private fun launchFragment(screen: BaseScreen, addToBackStack: Boolean = false) {
         val fragment = screen.javaClass.enclosingClass.newInstance() as Fragment
         fragment.arguments = bundleOf(ARG_SCREEN to screen)
@@ -52,6 +59,10 @@ class FragmentNavigator(
         transaction
             .replace(containerId, fragment)
             .commit()
+    }
+
+    private fun getCurrentFragment(): Fragment? {
+        return activity.supportFragmentManager.findFragmentById(containerId)
     }
 
     fun publishResults(fragment: Fragment) {

@@ -1,14 +1,16 @@
 package com.example.tickettoshow.application.repository.event
 
 import com.example.tickettoshow.application.model.event.DataEvent
-import com.example.tickettoshow.application.model.event.DataEventDescription
 import com.example.tickettoshow.application.model.event.EventsApi
-import com.example.tickettoshow.application.tasks.SimpleTask
-import java.util.concurrent.Callable
+import com.example.tickettoshow.foundation.model.tasks.factories.TasksFactory
+import com.example.tickettoshow.foundation.model.tasks.ThreadUtils
 
+//Реализация репозитория, который берет данные из памяти
 
 class InMemoryEventRepository(
     private val api: EventsApi,
+    private val tasksFactory: TasksFactory,
+    private val threadUtils: ThreadUtils,
 ) : EventRepository {
 
     private var events = listOf<DataEvent>()
@@ -30,16 +32,16 @@ class InMemoryEventRepository(
         listeners -= listener
     }
 
-    override fun getEvents() = SimpleTask<List<DataEvent>>(Callable {
-        Thread.sleep(2000)
+    override fun getEvents() = tasksFactory.async {
+        threadUtils.sleep(2000)
         events = api.getEvents()
-        return@Callable events
-    })
+        return@async events
+    }
 
-    override fun getEventById(id: Long) = SimpleTask<DataEventDescription>(Callable {
-        Thread.sleep(2000)
-        return@Callable api.getEventById(id)
-    })
+    override fun getEventById(id: Long) = tasksFactory.async{
+        threadUtils.sleep(2000)
+        return@async api.getEventById(id)
+    }
 
     // Тут происходит фильтрация данных и подготовка их для вьюмодели
 }

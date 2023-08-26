@@ -1,77 +1,50 @@
 package com.example.tickettoshow.application.view.homescreen
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.example.tickettoshow.application.model.event.DataEvent
+import com.example.tickettoshow.application.repository.event.EventListener
 import com.example.tickettoshow.foundation.views.BaseScreen
-import com.example.tickettoshow.foundation.tasks.ErrorResult
-import com.example.tickettoshow.foundation.tasks.PendingResult
-import com.example.tickettoshow.foundation.tasks.Result
-import com.example.tickettoshow.foundation.tasks.SuccessResult
+import com.example.tickettoshow.foundation.model.tasks.ErrorResult
+import com.example.tickettoshow.foundation.model.tasks.PendingResult
+import com.example.tickettoshow.foundation.model.tasks.SuccessResult
 import com.example.tickettoshow.application.repository.event.EventRepository
 import com.example.tickettoshow.foundation.views.BaseViewModel
 import com.example.tickettoshow.foundation.uiactions.UiActions
 import com.example.tickettoshow.foundation.navigator.Navigator
 import com.example.tickettoshow.application.view.eventdescriptionscreen.EventDescriptionFragment
+import com.example.tickettoshow.foundation.model.tasks.dispatchers.Dispatcher
+import com.example.tickettoshow.foundation.views.LiveResult
+import com.example.tickettoshow.foundation.views.MutableLiveResult
 
 
-class HomeViewModel(
+class HomeScreenViewModel(
     private val navigator: Navigator,
     private val uiActions: UiActions,
-    private val eventRepository: EventRepository
-) : BaseViewModel(), ConcertEventAdapter.Listener {
+    private val eventRepository: EventRepository,
+    dispatcher: Dispatcher
+) : BaseViewModel(dispatcher), ConcertEventAdapter.Listener {
 
-    private val _events = MutableLiveData<Result<List<EventListItem>>>()
-    val events: LiveData<Result<List<EventListItem>>> = _events
+    private val _events = MutableLiveResult<List<DataEvent>>(PendingResult())
+    val events: LiveResult<List<DataEvent>> = _events
 
-    private val eventIdsInProgress = mutableSetOf<Long>()
-    private var eventResult: Result<List<DataEvent>> = PendingResult()
-        set(value) {
-            field = value
-            notifyUpdates()
-        }
+    private val eventListener: EventListener = {
+        _events.postValue(SuccessResult(it))
+    }
 
     init {
-        getEvents()
-        notifyUpdates()
+        eventRepository.addListener(eventListener)
+        load()
     }
 
-    fun getEvents() {
-        eventResult = PendingResult()
-        eventRepository.getEvents()
-            .onError {
-                eventResult = ErrorResult(it)
-                uiActions.toast("Error home screen view model")
-            }
-            .onSuccess {
-                eventResult = SuccessResult(it)
-            }
-            .autoCancel()
+    override fun onCleared() {
+        super.onCleared()
+        eventRepository.removeListener(eventListener)
     }
 
-
-    private fun addProgressTo(event: DataEvent) {
-        eventIdsInProgress.add(event.id)
-        notifyUpdates()
+    private fun load() {
+        eventRepository.getEvents().into(_events)
     }
 
-    private fun removeProgressFrom(event: DataEvent) {
-        eventIdsInProgress.remove(event.id)
-        notifyUpdates()
-    }
-
-    private fun isInProgress(event: DataEvent): Boolean {
-        return eventIdsInProgress.contains(event.id)
-    }
-
-
-    private fun notifyUpdates() {
-        _events.postValue(eventResult.map { event->
-            event.map { EventListItem(it, isInProgress(it)) }
-        })
-    }
-
-    fun launch(screen: BaseScreen) : Boolean {
+    fun launch(screen: BaseScreen): Boolean {
         navigator.launch(screen)
         return true
     }
@@ -79,6 +52,10 @@ class HomeViewModel(
     override fun onEventClick(event: DataEvent) {
         val screen = EventDescriptionFragment.Screen(event.id)
         navigator.launch(screen)
+    }
+
+    fun onTryAgain() {
+        load()
     }
 
 }

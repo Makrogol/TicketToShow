@@ -10,12 +10,15 @@ import com.example.tickettoshow.foundation.BaseApplication
 import java.lang.reflect.Constructor
 
 
+//Фабрика для создания вью моделей, с переменным числом параметров в конструкторе
+// (то есть любых на данный момент)
+
 inline fun <reified VM : ViewModel> BaseFragment.screenViewModel() = viewModels<VM> {
     val application = requireActivity().application as BaseApplication
     val screen = requireArguments().getSerializable(ARG_SCREEN) as BaseScreen
 
     val activityScopeViewModel = (requireActivity() as FragmentsHolder).getActivityScopeViewModel()
-    val dependencies = listOf(screen, activityScopeViewModel) + application.repositories
+    val dependencies = listOf(screen, activityScopeViewModel) + application.singletonScopeDependencies
 
     ViewModelFactory(dependencies, this)
 }

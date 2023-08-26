@@ -3,7 +3,7 @@ package com.example.tickettoshow.application.repository.event
 import com.example.tickettoshow.application.model.event.DataEvent
 import com.example.tickettoshow.application.model.event.DataEventDescription
 import com.example.tickettoshow.foundation.model.Repository
-import com.example.tickettoshow.foundation.tasks.Task
+import com.example.tickettoshow.foundation.model.tasks.Task
 
 typealias EventListener = (List<DataEvent>) -> Unit
 

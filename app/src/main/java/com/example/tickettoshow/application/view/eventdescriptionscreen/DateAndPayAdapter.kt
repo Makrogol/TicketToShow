@@ -13,10 +13,11 @@ class DateAndPayAdapter() : RecyclerView.Adapter<DateAndPayAdapter.DateAndPayVie
     val dates: List<DataDateAndPay> = _dates
 
     @SuppressLint("NotifyDataSetChanged")
-    fun addShows(dates: List<DataDateAndPay>) {
+    fun addEvents(dates: List<DataDateAndPay>) {
         _dates.addAll(dates)
         notifyDataSetChanged()
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = DateAndPayViewHolder(
         ItemDateAndPayRecyclerviewBinding.inflate(
@@ -29,6 +30,7 @@ class DateAndPayAdapter() : RecyclerView.Adapter<DateAndPayAdapter.DateAndPayVie
 
     override fun onBindViewHolder(holder: DateAndPayViewHolder, position: Int) =
         holder.bind(_dates[position])
+
 
     override fun getItemCount() = _dates.size
 

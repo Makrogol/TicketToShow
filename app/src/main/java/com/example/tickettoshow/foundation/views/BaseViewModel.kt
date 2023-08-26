@@ -1,11 +1,16 @@
 package com.example.tickettoshow.foundation.views
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.tickettoshow.foundation.model.tasks.PendingResult
 import com.example.tickettoshow.foundation.tools.Event
-import com.example.tickettoshow.foundation.tasks.Result
-import com.example.tickettoshow.foundation.tasks.Task
+import com.example.tickettoshow.foundation.model.tasks.Result
+import com.example.tickettoshow.foundation.model.tasks.SuccessResult
+import com.example.tickettoshow.foundation.model.tasks.Task
+import com.example.tickettoshow.foundation.model.tasks.TaskListener
+import com.example.tickettoshow.foundation.model.tasks.dispatchers.Dispatcher
 
 
 typealias LiveEvent<T> = LiveData<Event<T>>
@@ -13,21 +18,44 @@ typealias MutableLiveEvent<T> = MutableLiveData<Event<T>>
 
 typealias LiveResult<T> = LiveData<Result<T>>
 typealias MutableLiveResult<T> = MutableLiveData<Result<T>>
+typealias MediatorLiveResult<T> = MediatorLiveData<Result<T>>
 
 
+//Базовый класс для вью моделей
 
-
-open class BaseViewModel : ViewModel() {
+open class BaseViewModel(
+    private val dispatcher: Dispatcher
+) : ViewModel() {
 
     private val tasks = mutableListOf<Task<*>>()
 
     override fun onCleared() {
         super.onCleared()
-        tasks.forEach { it.cancel() }
+        clearTasks()
     }
 
-    fun <T> Task<T>.autoCancel() {
+    fun onBackPressed() {
+        clearTasks()
+    }
+
+    private fun <T> Task<T>.safeEnqueue(listener: TaskListener<T>? = null) {
         tasks.add(this)
+        this.enqueue(dispatcher) {
+            tasks.remove(this)
+            listener?.invoke(it)
+        }
+    }
+
+    fun <T> Task<T>.into(liveResult: MutableLiveResult<T>) {
+        liveResult.postValue(PendingResult())
+        this.safeEnqueue {
+            liveResult.postValue(it)
+        }
+    }
+
+    private fun clearTasks() {
+        tasks.forEach { it.cancel() }
+        tasks.clear()
     }
 
     open fun onResult(result: Any) {

@@ -78,10 +78,4 @@ class EventDescriptionFragment : BaseFragment(),
             addressTextview.text = data.event.address
         }
     }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance() = EventDescriptionFragment()
-    }
 }

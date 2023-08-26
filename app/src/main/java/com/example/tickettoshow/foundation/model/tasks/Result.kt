@@ -1,4 +1,4 @@
-package com.example.tickettoshow.foundation.tasks
+package com.example.tickettoshow.foundation.model.tasks
 
 import java.lang.Exception
 
@@ -21,13 +21,15 @@ sealed class Result<T> {
 
 }
 
+sealed class FinalResult<T> : Result<T>()
+
 class SuccessResult<T>(
     val data: T
-) : Result<T>()
+) : FinalResult<T>()
 
 class ErrorResult<T>(
     val exception: Exception
-) : Result<T>()
+) : FinalResult<T>()
 
 class PendingResult<T> : Result<T>()
 

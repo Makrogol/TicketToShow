@@ -21,7 +21,7 @@ class HomeScreenFragment : BaseFragment(), BottomNavigationView.OnNavigationItem
     class Screen: BaseScreen
 
     private lateinit var binding: FragmentHomeScreenBinding
-    override val viewModel by screenViewModel<HomeViewModel>()
+    override val viewModel by screenViewModel<HomeScreenViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +33,6 @@ class HomeScreenFragment : BaseFragment(), BottomNavigationView.OnNavigationItem
         val adapter = ConcertEventAdapter(viewModel)
 
         binding.concertsRecyclerview.adapter = adapter
-        viewModel.getEvents()
 
         viewModel.events.observe(viewLifecycleOwner) { result ->
             renderSimpleResult(

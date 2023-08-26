@@ -1,9 +1,9 @@
 package com.example.tickettoshow.foundation
 
-import com.example.tickettoshow.foundation.model.Repository
+//Базоый интерфейс для приложения
 
 interface BaseApplication {
 
-    val repositories: List<Repository>
+    val singletonScopeDependencies: List<Any>
 
 }
