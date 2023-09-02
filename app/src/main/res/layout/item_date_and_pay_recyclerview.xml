@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/bg_item_date_and_pay_">
 
     <TextView
         android:id="@+id/item_date_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="0"
-        android:layout_column="0" />
+        android:layout_column="0"
+        android:text="@string/default_string"
+        android:textColor="@color/white"
+        android:textSize="@dimen/medium_text_size" />
 
     <TextView
         android:id="@+id/item_time_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="1"
-        android:layout_column="0" />
+        android:layout_column="0"
+        android:text="@string/default_string"
+        android:textColor="@color/white"
+        android:textSize="@dimen/small_text_size" />
 
     <Button
         android:id="@+id/item_pay_button"
@@ -23,6 +32,12 @@
         android:layout_height="wrap_content"
         android:layout_row="0"
         android:layout_rowSpan="2"
-        android:layout_column="1" />
+        android:layout_column="1"
+        android:layout_gravity="right"
+        android:background="@drawable/bg_pay_button"
+        android:text="@string/default_string"
+        android:textColor="@color/white"
+        android:textSize="@dimen/medium_text_size"
+        tools:ignore="RtlHardcoded" />
 
 </GridLayout>

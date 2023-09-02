@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/bot_menu_home_screen"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@drawable/affiche_icon_selector"
         android:title="" />
 
     <item
         android:id="@+id/bot_menu_profile_screen"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@drawable/profile_icon_selector"
         android:title="" />
 
     <item
         android:id="@+id/bot_menu_calendar_screen"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@drawable/calendar_icon_selector"
         android:title="" />
 
 </menu>

@@ -1,7 +1,7 @@
 package com.example.tickettoshow.foundation.tools
 
-fun checkPassword(password: String): Boolean{
-    if (password.length < 8){
+fun checkPassword(password: String): Boolean {
+    if (password.length < 8) {
         return false
     }
     var digitInPassword = false
@@ -9,17 +9,17 @@ fun checkPassword(password: String): Boolean{
     var lowercaseLetterInPassword = false
     var specialCharacterInPassword = false
 
-    for (letter in password){
-        if (letter.isDigit()){
+    for (letter in password) {
+        if (letter.isDigit()) {
             digitInPassword = true
         }
-        if (letter.isUpperCase()){
+        if (letter.isUpperCase()) {
             capitalLetterInPassword = true
         }
-        if (letter.isLowerCase()){
+        if (letter.isLowerCase()) {
             lowercaseLetterInPassword = true
         }
-        if (letter in setOf<Char>('!', '?', '.', ',', '#', '$', '%')){
+        if (letter in setOf('!', '?', '.', ',', '#', '$', '%')) {
             specialCharacterInPassword = true
         }
     }

@@ -31,7 +31,16 @@ class ViewModelFactory(
 ) : AbstractSavedStateViewModelFactory(owner, null) {
 
 
-    override fun <T : ViewModel?> create(
+    private fun findDependencies(constructor: Constructor<*>, dependencies: List<Any>): List<Any> {
+        val args = mutableListOf<Any>()
+        constructor.parameterTypes.forEach { parameterClass ->
+            val dependency = dependencies.first { parameterClass.isAssignableFrom(it.javaClass) }
+            args.add(dependency)
+        }
+        return args
+    }
+
+    override fun <T : ViewModel> create(
         key: String,
         modelClass: Class<T>,
         handle: SavedStateHandle
@@ -41,15 +50,6 @@ class ViewModelFactory(
         val dependenciesWithSavedState = dependencies + handle
         val arguments = findDependencies(constructor, dependenciesWithSavedState)
         return constructor.newInstance(*arguments.toTypedArray()) as T
-    }
-
-    private fun findDependencies(constructor: Constructor<*>, dependencies: List<Any>): List<Any> {
-        val args = mutableListOf<Any>()
-        constructor.parameterTypes.forEach { parameterClass ->
-            val dependency = dependencies.first { parameterClass.isAssignableFrom(it.javaClass) }
-            args.add(dependency)
-        }
-        return args
     }
 
 }

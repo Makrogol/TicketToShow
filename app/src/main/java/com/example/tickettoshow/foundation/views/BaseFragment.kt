@@ -4,10 +4,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
-import com.example.tickettoshow.foundation.model.tasks.ErrorResult
-import com.example.tickettoshow.foundation.model.tasks.PendingResult
-import com.example.tickettoshow.foundation.model.tasks.Result
-import com.example.tickettoshow.foundation.model.tasks.SuccessResult
+import com.example.tickettoshow.foundation.model.ErrorResult
+import com.example.tickettoshow.foundation.model.PendingResult
+import com.example.tickettoshow.foundation.model.Result
+import com.example.tickettoshow.foundation.model.SuccessResult
 import java.lang.Exception
 
 //Базовый класс для фрагмента

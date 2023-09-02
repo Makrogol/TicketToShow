@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tickettoshow.application.model.event.DataEvent
-import com.example.tickettoshow.databinding.ItemConcertsRecyclerviewBinding
+import com.example.tickettoshow.databinding.ItemEventsRecyclerviewBinding
 
 
 class ConcertEventAdapter(
@@ -24,14 +24,14 @@ class ConcertEventAdapter(
 
 
     override fun onClick(v: View) {
-        val event = v.tag as EventListItem
+        val event = v.tag as DataEvent
 
-        listener.onEventClick(event.event)
+        listener.onEventClick(event)
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConcertEventViewHolder {
-        val binding = ItemConcertsRecyclerviewBinding.inflate(
+        val binding = ItemEventsRecyclerviewBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -64,7 +64,7 @@ class ConcertEventAdapter(
 
 
     class ConcertEventViewHolder(
-        val binding: ItemConcertsRecyclerviewBinding,
+        val binding: ItemEventsRecyclerviewBinding,
     ) : RecyclerView.ViewHolder(binding.root)
 
     interface Listener {

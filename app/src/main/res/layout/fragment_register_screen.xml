@@ -1,107 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".application.view.RegisterScreenFragment">
+    android:background="@color/black"
+    tools:context=".application.view.registerscreen.RegisterScreenFragment">
+
+    <include layout="@layout/part_result" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/screen_background_shape"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/welcome_to_tts_textview"
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="50dp"
-            android:gravity="center"
-            android:text="@string/ticket_to_show_welcome_text"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="70dp"
+            android:src="@drawable/tts_main_text" />
 
         <TextView
             android:id="@+id/registration_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:gravity="center"
             android:text="@string/registration_text"
             android:textColor="@color/white"
-            android:textSize="17sp" />
+            android:textSize="@dimen/big_text_size" />
 
-        <LinearLayout
+
+        <EditText
+            android:id="@+id/name_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/register_form_shape"
-            android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp">
+            android:autofillHints="creditCardExpirationDate"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/your_name_register_screen_hint_text"
+            android:inputType="text"
+            android:paddingTop="30dp"
+            android:tag="false"
+            android:textColorHint="@color/text_hint_color" />
 
+        <EditText
+            android:id="@+id/email_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/email_address_register_screen_hint_text"
+            android:inputType="textEmailAddress"
+            android:paddingTop="30dp"
+            android:tag="false"
+            android:textColorHint="@color/text_hint_color" />
 
-            <EditText
-                android:id="@+id/name_edittext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints="creditCardExpirationDate"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/your_name_register_screen_hint_text"
-                android:inputType="text"
-                android:paddingTop="30dp"
-                android:textColorHint="@color/white" />
+        <EditText
+            android:id="@+id/password_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/password_register_screen_hint_text"
+            android:inputType="textPassword"
+            android:paddingTop="30dp"
+            android:tag="false"
+            android:textColorHint="@color/text_hint_color"
+            app:passwordToggleEnabled="true" />
 
-            <EditText
-                android:id="@+id/email_edittext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/email_address_register_screen_hint_text"
-                android:inputType="textEmailAddress"
-                android:paddingTop="30dp"
-                android:textColorHint="@color/white" />
+        <EditText
+            android:id="@+id/confirm_password_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/confirm_password_register_screen_text"
+            android:inputType="textPassword"
+            android:paddingTop="30dp"
+            android:tag="false"
+            android:textColorHint="@color/text_hint_color"
+            app:passwordToggleEnabled="true" />
 
-            <EditText
-                android:id="@+id/password_edittext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/password_register_screen_hint_text"
-                android:inputType="textPassword"
-                android:paddingTop="30dp"
-                android:textColorHint="@color/white"
-                app:passwordToggleEnabled="true" />
-
-            <EditText
-                android:id="@+id/confirm_password_edittext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/confirm_password_register_screen_text"
-                android:inputType="textPassword"
-                android:paddingTop="30dp"
-                android:textColorHint="@color/white"
-                app:passwordToggleEnabled="true" />
-
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/register_screen_error_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/default_string"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_size"
+            android:visibility="gone"
+            app:drawableLeftCompat="@drawable/error_register_screen_icon" />
     </LinearLayout>
 
     <LinearLayout
@@ -117,10 +109,11 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/bg_blue_button_color"
+            android:background="@drawable/bg_register_button_off"
+            android:clickable="false"
             android:text="@string/button_register_text"
             android:textAllCaps="false"
-            app:cornerRadius="10dp" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/back_button"
@@ -132,7 +125,7 @@
             android:text="@string/button_back_text"
             android:textAllCaps="false"
             android:textColor="@color/black"
-            app:cornerRadius="10dp" />
+            app:cornerRadius="20dp" />
 
         <TextView
             android:id="@+id/confidence_politic_textview"
@@ -144,10 +137,11 @@
             android:layout_marginBottom="5dp"
             android:text="@string/confidence_politic_text"
             android:textAlignment="center"
-            android:textSize="13sp" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_size" />
 
 
     </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

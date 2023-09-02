@@ -7,7 +7,7 @@ import androidx.core.view.children
 import com.example.tickettoshow.R
 import com.example.tickettoshow.databinding.PartResultBinding
 import com.example.tickettoshow.foundation.views.BaseFragment
-import com.example.tickettoshow.foundation.model.tasks.Result
+import com.example.tickettoshow.foundation.model.Result
 
 fun <T> BaseFragment.renderSimpleResult(
     root: ViewGroup,

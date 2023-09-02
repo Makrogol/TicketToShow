@@ -1,16 +1,18 @@
 package com.example.tickettoshow.application.repository.event
 
 import com.example.tickettoshow.application.model.event.DataEvent
+import com.example.tickettoshow.application.model.event.DataEventDescription
 import com.example.tickettoshow.application.model.event.EventsApi
-import com.example.tickettoshow.foundation.model.tasks.factories.TasksFactory
-import com.example.tickettoshow.foundation.model.tasks.ThreadUtils
+import com.example.tickettoshow.foundation.model.coroutines.IoDispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.withContext
 
 //Реализация репозитория, который берет данные из памяти
 
 class InMemoryEventRepository(
     private val api: EventsApi,
-    private val tasksFactory: TasksFactory,
-    private val threadUtils: ThreadUtils,
+    private val ioDispatcher: IoDispatcher
 ) : EventRepository {
 
     private var events = listOf<DataEvent>()
@@ -32,16 +34,17 @@ class InMemoryEventRepository(
         listeners -= listener
     }
 
-    override fun getEvents() = tasksFactory.async {
-        threadUtils.sleep(2000)
+    override suspend fun getEvents(): List<DataEvent> = withContext(ioDispatcher.value) {
+        delay(2000)
         events = api.getEvents()
-        return@async events
+        return@withContext events
     }
 
-    override fun getEventById(id: Long) = tasksFactory.async{
-        threadUtils.sleep(2000)
-        return@async api.getEventById(id)
-    }
+    override suspend fun getEventById(id: Long): DataEventDescription =
+        withContext(ioDispatcher.value) {
+            delay(2000)
+            return@withContext api.getEventById(id)
+        }
 
     // Тут происходит фильтрация данных и подготовка их для вьюмодели
 }

@@ -1,109 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".application.view.SubmitEmailFragment">
+    android:background="@color/black"
+    tools:context=".application.view.submitemailscreen.SubmitEmailFragment">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/screen_background_shape"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/welcome_to_tts_textview"
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="50dp"
-            android:gravity="center"
-            android:text="@string/ticket_to_show_welcome_text"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="70dp"
+            android:src="@drawable/tts_main_text" />
 
         <TextView
-            android:id="@+id/submit_email_textview"
+            android:id="@+id/registration_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
+            android:layout_marginBottom="5dp"
             android:text="@string/submit_email_text"
             android:textColor="@color/white"
-            android:textSize="17sp" />
+            android:textSize="@dimen/big_text_size" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_emil_code_text"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:textSize="@dimen/medium_text_size" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp">
-
-
-            <TextView
-                android:id="@+id/enter_email_code_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/enter_emil_code_text"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/number_code_edittext"
-                android:layout_width="match_parent"
+                android:id="@+id/submit_email1_edittext"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="150dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/bg_enter_email_code_shape"
-                android:ems="10"
-                android:inputType="numberPassword"
-                android:maxLength="4"
-                android:paddingStart="10dp"
-                android:paddingTop="30dp"
-                android:paddingBottom="10dp"
-                android:textAlignment="inherit"
-                tools:ignore="RtlSymmetry" />
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/bg_enter_email_code_shape_good"
+                android:hint="@string/input_submit_email_code_hint_text"
+                android:inputType="number"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/very_big_text_size" />
 
-            <TextView
-                android:id="@+id/repeat_send_email_code_textview"
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/submit_email2_edittext"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/repeat_send_email_code_text"
-                android:textColor="@color/white" />
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/bg_enter_email_code_shape_good"
+                android:hint="@string/input_submit_email_code_hint_text"
+                android:inputType="number"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/very_big_text_size" />
 
+            <EditText
+                android:id="@+id/submit_email3_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/bg_enter_email_code_shape_good"
+                android:hint="@string/input_submit_email_code_hint_text"
+                android:inputType="number"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/very_big_text_size" />
+
+            <EditText
+                android:id="@+id/submit_email4_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_enter_email_code_shape_good"
+                android:hint="@string/input_submit_email_code_hint_text"
+                android:inputType="number"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/very_big_text_size" />
 
         </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/repeat_send_email_code_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium_text_size" />
+
+
+        <TextView
+            android:id="@+id/register_screen_error_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/default_string"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_size"
+            android:visibility="gone"
+            app:drawableLeftCompat="@drawable/error_register_screen_icon" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="bottom"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/registration_button"
@@ -112,10 +124,10 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/bg_blue_button_color"
+            android:background="@drawable/bg_register_button_off"
             android:text="@string/button_register_text"
             android:textAllCaps="false"
-            app:cornerRadius="10dp" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/back_button"
@@ -123,14 +135,27 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="50dp"
             android:backgroundTint="@color/white"
             android:text="@string/button_back_text"
             android:textAllCaps="false"
             android:textColor="@color/black"
-            app:cornerRadius="10dp" />
+            app:cornerRadius="20dp" />
+
+        <TextView
+            android:id="@+id/confidence_politic_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/confidence_politic_text"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_size" />
+
 
     </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

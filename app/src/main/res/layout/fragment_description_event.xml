@@ -4,27 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".application.view.eventdescriptionscreen.EventDescriptionFragment">
 
-    <include layout="@layout/part_result"/>
+    <include layout="@layout/part_result" />
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp">
 
         <TextView
             android:id="@+id/type_event_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
-            android:layout_column="0" />
+            android:layout_column="0"
+            android:text="@string/default_string"
+            android:textColor="@color/white"
+            android:textSize="@dimen/big_text_size" />
 
         <TextView
             android:id="@+id/place_event_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
-            android:layout_column="0" />
+            android:layout_column="0"
+            android:text="@string/default_string"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_size" />
 
 
         <TextView
@@ -32,7 +42,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="2"
-            android:layout_column="0" />
+            android:layout_rowSpan="2"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:text="@string/default_string"
+            android:textColor="@color/white"
+            android:textSize="@dimen/big_text_size" />
 
 
         <TextView
@@ -40,7 +55,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="3"
-            android:layout_column="0" />
+            android:layout_column="0"
+            android:layout_gravity="bottom"
+            android:text="@string/default_string"
+            android:textColor="@color/white"
+            android:textSize="@dimen/big_text_size" />
 
         <ImageView
             android:id="@+id/poster_event_imageview"
@@ -48,7 +67,10 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_rowSpan="4"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:layout_gravity="right"
+            android:src="@drawable/test_img"
+            tools:ignore="RtlHardcoded" />
 
 
         <TextView
@@ -58,7 +80,10 @@
             android:layout_row="4"
             android:layout_column="0"
             android:layout_columnSpan="2"
-            android:ellipsize="end" />
+            android:ellipsize="end"
+            android:text="@string/default_string"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium_text_size" />
 
 
         <TextView
@@ -67,7 +92,12 @@
             android:layout_height="wrap_content"
             android:layout_row="5"
             android:layout_column="0"
-            android:layout_columnSpan="2" />
+            android:layout_columnSpan="2"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:text="@string/default_string"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_size" />
 
 
         <TextView
@@ -76,7 +106,10 @@
             android:layout_height="wrap_content"
             android:layout_row="6"
             android:layout_column="0"
-            android:layout_columnSpan="2" />
+            android:layout_columnSpan="2"
+            android:text="@string/default_string"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium_text_size" />
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -88,7 +121,7 @@
             android:layout_columnSpan="2"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_concerts_recyclerview" />
+            tools:listitem="@layout/item_date_and_pay_recyclerview" />
 
         <TextView
             android:id="@+id/address_text_textview"
@@ -96,7 +129,10 @@
             android:layout_height="wrap_content"
             android:layout_row="8"
             android:layout_column="0"
-            android:layout_columnSpan="2" />
+            android:layout_columnSpan="2"
+            android:text="@string/default_string"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium_text_size" />
 
         <TextView
             android:id="@+id/address_textview"
@@ -104,7 +140,10 @@
             android:layout_height="wrap_content"
             android:layout_row="9"
             android:layout_column="0"
-            android:layout_columnSpan="2" />
+            android:layout_columnSpan="2"
+            android:text="@string/default_string"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_size" />
 
     </GridLayout>
 
@@ -112,12 +151,15 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom">
+        android:layout_gravity="bottom"
+        android:text="@string/default_string">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav_menu"
             android:layout_width="match_parent"
+            android:background="@color/white"
             android:layout_height="wrap_content"
+            android:alpha="0.82"
             app:menu="@menu/bottom_nav_menu" />
     </FrameLayout>
 

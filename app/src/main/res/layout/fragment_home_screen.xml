@@ -5,53 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".application.view.homescreen.HomeScreenFragment">
 
-    <LinearLayout
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/type_event_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/search_edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/bg_search_edit_text"
-            android:backgroundTint="@android:color/transparent"
-            android:clickable="true"
-            android:drawableStart="@drawable/search_icon"
-            android:drawableEnd="@drawable/tts_home_screen_logo"
-            android:focusable="true" />
-
-        <TextView
-            android:id="@+id/concerts_textview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingStart="15dp"
-            android:text="@string/concerts_home_screen_text"
-            android:textSize="30sp"
-            tools:ignore="RtlSymmetry" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/concerts_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="80dp"
-            android:orientation="horizontal"
-            android:scrollbarSize="5dp"
-            android:scrollbarThumbHorizontal="@color/white"
-            android:scrollbars="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_concerts_recyclerview" />
-
-    </LinearLayout>
-
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_type_event_recyclerview" />
 
 
     <include layout="@layout/part_result"/>

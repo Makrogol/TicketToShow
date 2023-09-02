@@ -12,6 +12,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#DE2D2D</color>
 
     <color name="bg_blue_button_color">#4bb0cd</color>
     <color name="register_rect_background_color">#678091</color>
@@ -20,4 +21,13 @@
     <color name="bg_enter_email_code_color">#d9d9d9</color>
 
     <color name="bg_search_edit_text_color">#33EBEBEB</color>
+    <color name="bg_pay_button_color">#027E31</color>
+
+    <color name="thumb_color">#FC7308</color>
+
+    <color name="text_hint_color">#9D9D9D</color>
+    
+    <color name="register_button_off_color">#444444</color>
+    
+    <color name="register_button_on_color">#8166ED</color>
 </resources>

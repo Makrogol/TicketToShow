@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.ui.graphics.vector.VectorProperty
 import com.example.tickettoshow.foundation.views.BaseFragment
 import com.example.tickettoshow.R
 import com.example.tickettoshow.application.renderSimpleResult
@@ -18,7 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeScreenFragment : BaseFragment(), BottomNavigationView.OnNavigationItemSelectedListener {
 
-    class Screen: BaseScreen
+    class Screen : BaseScreen
 
     private lateinit var binding: FragmentHomeScreenBinding
     override val viewModel by screenViewModel<HomeScreenViewModel>()
@@ -30,22 +31,43 @@ class HomeScreenFragment : BaseFragment(), BottomNavigationView.OnNavigationItem
         binding = FragmentHomeScreenBinding.inflate(inflater, container, false)
         binding.bottomNavMenu.setOnNavigationItemSelectedListener(this)
 
-        val adapter = ConcertEventAdapter(viewModel)
+        val adapter = TypeEventsAdapter()
+        val adapters = createAdapters()
 
-        binding.concertsRecyclerview.adapter = adapter
+        binding.typeEventRecyclerview.adapter = adapter
 
         viewModel.events.observe(viewLifecycleOwner) { result ->
             renderSimpleResult(
                 root = binding.root,
                 result = result,
-                onSuccess = {
-                    adapter.addShows(it)
+                onSuccess = { ListDataEvent ->
+                    adapters.forEach { it.adapter.addShows(ListDataEvent) }
+                    adapter.addTypeEvents(adapters)
                 }
             )
         }
 
         return binding.root
     }
+
+    private fun createAdapters(): List<DataTypeEvents> = listOf(
+        DataTypeEvents(
+            adapter = ConcertEventAdapter(viewModel),
+            eventsName = "Концерты"
+        ),
+        DataTypeEvents(
+            adapter = ConcertEventAdapter(viewModel),
+            eventsName = "Классика"
+        ),
+        DataTypeEvents(
+            adapter = ConcertEventAdapter(viewModel),
+            eventsName = "Спектакли"
+        ),
+        DataTypeEvents(
+            adapter = ConcertEventAdapter(viewModel),
+            eventsName = "Для детей"
+        ),
+    )
 
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean = when (item.itemId) {

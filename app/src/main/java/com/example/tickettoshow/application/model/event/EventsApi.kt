@@ -11,7 +11,7 @@ interface EventsApi {
 
 }
 
-class EventsApiImpl: EventsApi {
+class EventsApiImpl : EventsApi {
 
     private var events = mutableListOf<DataEvent>()
 
@@ -19,27 +19,27 @@ class EventsApiImpl: EventsApi {
         // Тут должен быть завпрос в сеть или в бд
         events = listOf(
             DataEvent(
-            id = 1,
-            name = "name1",
-            date = "date1",
-            time = "time1",
-            address = "address1",
-            posterId = R.drawable.test_img
+                id = 1,
+                name = "Игорь Бутман",
+                date = "19 сентября",
+                time = "18:00",
+                address = "Дом музыки",
+                posterId = R.drawable.test_img
             ),
-        DataEvent(
-            id = 2,
-            name = "name2",
-            date = "date2",
-            time = "time2",
-            address = "address2",
-            posterId = R.drawable.test_img
-        ),
+            DataEvent(
+                id = 2,
+                name = "Игорь Бутман",
+                date = "19 сентября",
+                time = "18:00",
+                address = "Дом музыки",
+                posterId = R.drawable.test_img
+            ),
             DataEvent(
                 id = 3,
-                name = "name3",
-                date = "date3",
-                time = "time3",
-                address = "address3",
+                name = "Игорь Бутман",
+                date = "19 сентября",
+                time = "18:00",
+                address = "Дом музыки",
                 posterId = R.drawable.test_img
             ),
         ).toMutableList()
@@ -47,10 +47,15 @@ class EventsApiImpl: EventsApi {
     }
 
     override fun getEventById(id: Long): DataEventDescription {
-        val event = events.firstOrNull { it.id == id } ?: throw RuntimeException("api get user by id exception")
+        val event = events.firstOrNull { it.id == id }
+            ?: throw RuntimeException("api get user by id exception")
         return DataEventDescription(
             event = event,
-            description = "Some Description"
+            description = "Марко Маркович начал играть на трубе еще в детском саду. А сегодня он " +
+                    "лидер собственного коллектива Big Brass Band, успешный представитель духовой" +
+                    " музыки: трубач и флюгельгорнист, преемник своего отца, известного трубача " +
+                    "Бобана Марковича, харизматичный исполнитель, композитор и аранжировщик. Его " +
+                    "музыка наполнена диким вихрем зажигательных цыгано-балканских мелодий, которые..."
         )
     }
 
