@@ -1,8 +1,8 @@
-package com.example.tickettoshow.application.model.user
+package com.example.tickettoshow.application.model.user.api
 
 class InMemoryUsersApi : UsersApi {
 
-    private val users = mutableListOf<DataUser>(
+    private val users = mutableListOf(
         DataUser(
             id = 1,
             name = "Oleg",
@@ -27,9 +27,9 @@ class InMemoryUsersApi : UsersApi {
         return users.firstOrNull { it.email == email } == null
     }
 
-    override fun registerUser(user: DataUser) {
+    override fun registerUser(user: DataUser): DataUser {
         val newUser = user.copy(id = users.last().id + 1)
         users.add(newUser)
+        return newUser
     }
-
 }

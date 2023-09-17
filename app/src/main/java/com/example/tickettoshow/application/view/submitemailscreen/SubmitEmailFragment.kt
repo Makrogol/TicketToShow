@@ -29,18 +29,6 @@ class SubmitEmailFragment : BaseFragment() {
     ): View {
         binding = FragmentSubmitEmailBinding.inflate(inflater, container, false)
 
-        binding.submitEmail1Edittext.doOnTextChanged { text, start, before, count ->
-
-        }
-
-        binding.registrationButton.setOnClickListener {
-
-        }
-
-        binding.backButton.setOnClickListener {
-
-        }
-
         return binding.root
 
     }

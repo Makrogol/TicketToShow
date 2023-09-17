@@ -7,6 +7,7 @@ import com.example.tickettoshow.R
 import com.example.tickettoshow.foundation.ActivityScopeViewModel
 import com.example.tickettoshow.databinding.ActivityMainBinding
 import com.example.tickettoshow.application.view.homescreen.HomeScreenFragment
+import com.example.tickettoshow.application.view.registerscreen.RegisterScreenFragment
 import com.example.tickettoshow.foundation.navigator.FragmentNavigator
 import com.example.tickettoshow.foundation.navigator.IntermediateNavigator
 import com.example.tickettoshow.foundation.tools.viewModelCreator

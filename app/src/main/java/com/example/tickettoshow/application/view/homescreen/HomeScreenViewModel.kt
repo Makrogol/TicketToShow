@@ -23,18 +23,18 @@ class HomeScreenViewModel(
     private val _events = MutableLiveResult<List<DataEvent>>(PendingResult())
     val events: LiveResult<List<DataEvent>> = _events
 
-    private val eventListener: EventListener = {
-        _events.postValue(SuccessResult(it))
-    }
+//    private val eventListener: EventListener = {
+//        _events.postValue(SuccessResult(it))
+//    }
 
     init {
-        eventRepository.addListener(eventListener)
+//        eventRepository.addListener(eventListener)
         load()
     }
 
     override fun onCleared() {
         super.onCleared()
-        eventRepository.removeListener(eventListener)
+//        eventRepository.removeListener(eventListener)
     }
 
     private fun load() = into(_events){

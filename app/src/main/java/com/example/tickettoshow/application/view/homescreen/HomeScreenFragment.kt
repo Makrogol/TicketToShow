@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.ui.graphics.vector.VectorProperty
+import androidx.appcompat.content.res.AppCompatResources
 import com.example.tickettoshow.foundation.views.BaseFragment
 import com.example.tickettoshow.R
 import com.example.tickettoshow.application.renderSimpleResult
@@ -13,7 +13,7 @@ import com.example.tickettoshow.databinding.FragmentHomeScreenBinding
 import com.example.tickettoshow.foundation.views.screenViewModel
 import com.example.tickettoshow.foundation.views.BaseScreen
 import com.example.tickettoshow.application.view.CalendarFragment
-import com.example.tickettoshow.application.view.ProfileFragment
+import com.example.tickettoshow.application.view.profilescreen.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -29,6 +29,7 @@ class HomeScreenFragment : BaseFragment(), BottomNavigationView.OnNavigationItem
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeScreenBinding.inflate(inflater, container, false)
+        binding.bottomNavMenu.menu.findItem(R.id.bot_menu_home_screen).setIcon(R.drawable.affiche_on_icon)
         binding.bottomNavMenu.setOnNavigationItemSelectedListener(this)
 
         val adapter = TypeEventsAdapter()

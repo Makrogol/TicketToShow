@@ -6,22 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.tickettoshow.databinding.FragmentEntryScreenBinding
+import com.example.tickettoshow.foundation.views.BaseScreen
 
 class EntryScreenFragment : Fragment() {
+
+    class Screen: BaseScreen
 
     private lateinit var binding: FragmentEntryScreenBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentEntryScreenBinding.inflate(inflater, container, false)
-
-        binding.entryButton.setOnClickListener {
-            if (activity is ActivityNavigator) {
-                (activity as ActivityNavigator).goToHomeScreen()
-            }
-        }
         return binding.root
     }
 

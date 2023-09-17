@@ -8,6 +8,7 @@
     android:background="@color/black"
     tools:context=".application.view.homescreen.HomeScreenFragment">
 
+    <include layout="@layout/part_result"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/type_event_recyclerview"
@@ -17,7 +18,7 @@
         tools:listitem="@layout/item_type_event_recyclerview" />
 
 
-    <include layout="@layout/part_result"/>
+
 
     <FrameLayout
         android:layout_width="match_parent"

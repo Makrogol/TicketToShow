@@ -1,4 +1,4 @@
-package com.example.tickettoshow.application.model.user
+package com.example.tickettoshow.application.model.user.api
 
 data class DataUser(
     val id: Long,

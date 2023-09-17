@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
     android:background="@drawable/bg_item_date_and_pay_">
 
     <TextView
@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_row="0"
         android:layout_column="0"
+        android:layout_marginStart="10dp"
         android:text="@string/default_string"
         android:textColor="@color/white"
         android:textSize="@dimen/medium_text_size" />
@@ -22,22 +23,28 @@
         android:layout_height="wrap_content"
         android:layout_row="1"
         android:layout_column="0"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:text="@string/default_string"
         android:textColor="@color/white"
         android:textSize="@dimen/small_text_size" />
 
-    <Button
+    <TextView
         android:id="@+id/item_pay_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:layout_row="0"
         android:layout_rowSpan="2"
         android:layout_column="1"
-        android:layout_gravity="right"
-        android:background="@drawable/bg_pay_button"
+        android:layout_gravity="center|right"
+        android:background="@color/bg_pay_button_color"
         android:text="@string/default_string"
         android:textColor="@color/white"
-        android:textSize="@dimen/medium_text_size"
+        android:textSize="@dimen/small_text_size"
+        android:textAlignment="center"
         tools:ignore="RtlHardcoded" />
 
 </GridLayout>

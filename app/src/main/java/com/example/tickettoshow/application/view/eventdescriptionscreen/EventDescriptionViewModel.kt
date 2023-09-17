@@ -1,5 +1,6 @@
 package com.example.tickettoshow.application.view.eventdescriptionscreen
 
+import com.example.tickettoshow.application.model.event.DataDateAndPay
 import com.example.tickettoshow.foundation.views.BaseScreen
 import com.example.tickettoshow.application.view.eventdescriptionscreen.EventDescriptionFragment.Screen
 import com.example.tickettoshow.foundation.model.Result
@@ -19,7 +20,7 @@ class EventDescriptionViewModel(
     private val navigator: Navigator,
     private val uiActions: UiActions,
     private val eventRepository: EventRepository,
-) : BaseViewModel() {
+) : BaseViewModel(), DateAndPayAdapter.Listener {
 
     private val _result = MutableLiveResult<DataEventDescription>(PendingResult())
     val result: LiveResult<DataEventDescription> = _result
@@ -45,5 +46,9 @@ class EventDescriptionViewModel(
 
     fun tryAgain() {
         //todo
+    }
+
+    override fun onPayClick(data: DataDateAndPay) {
+        uiActions.toast("Оплатите заказ дата: ${data.date}\nвремя: ${data.time}\nстоимость: ${data.minPrice}")
     }
 }

@@ -1,7 +1,7 @@
 package com.example.tickettoshow.application.repository.user
 
-import com.example.tickettoshow.application.model.user.DataUser
-import com.example.tickettoshow.application.model.user.UsersApi
+import com.example.tickettoshow.application.model.user.api.DataUser
+import com.example.tickettoshow.application.model.user.api.UsersApi
 import com.example.tickettoshow.foundation.model.coroutines.IoDispatcher
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
@@ -12,7 +12,6 @@ class InMemoryUserRepository(
 ) : UserRepository {
 
     private val listeners = mutableSetOf<UserListener>()
-
     private var users = listOf<DataUser>()
         set(value) {
             if (value != field) {
@@ -38,8 +37,6 @@ class InMemoryUserRepository(
 
     override suspend fun registerUser(user: DataUser) = withContext(ioDispatcher.value) {
         delay(1000)
-        api.registerUser(user)
+        return@withContext api.registerUser(user)
     }
-
-
 }

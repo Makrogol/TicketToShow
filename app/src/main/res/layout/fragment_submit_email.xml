@@ -38,11 +38,21 @@
             android:textColor="@color/white"
             android:layout_marginBottom="5dp"
             android:textSize="@dimen/medium_text_size" />
+        <EditText
+            android:id="@+id/submit_email_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_enter_email_code_shape_good"
+            android:hint="1234"
+            android:inputType="number"
+            android:layout_marginStart="10dp"
+            tools:ignore="TextFields" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
+            android:visibility="gone"
             android:orientation="horizontal">
 
             <EditText

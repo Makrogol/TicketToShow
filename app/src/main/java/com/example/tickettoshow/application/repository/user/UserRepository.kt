@@ -1,6 +1,6 @@
 package com.example.tickettoshow.application.repository.user
 
-import com.example.tickettoshow.application.model.user.DataUser
+import com.example.tickettoshow.application.model.user.api.DataUser
 
 typealias UserListener = (List<DataUser>) -> Unit
 
@@ -14,6 +14,5 @@ interface UserRepository {
 
     suspend fun checkUserByEmail(email: String): Boolean
 
-    suspend fun registerUser(user: DataUser)
-
+    suspend fun registerUser(user: DataUser): DataUser
 }

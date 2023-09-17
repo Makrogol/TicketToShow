@@ -78,23 +78,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="4"
+            android:layout_marginTop="10dp"
             android:layout_column="0"
             android:layout_columnSpan="2"
             android:ellipsize="end"
-            android:text="@string/default_string"
+            android:text="Описание"
             android:textColor="@color/white"
             android:textSize="@dimen/medium_text_size" />
-
 
         <TextView
             android:id="@+id/description_event_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxLines="4"
+            android:ellipsize="marquee"
             android:layout_row="5"
             android:layout_column="0"
             android:layout_columnSpan="2"
-            android:maxLines="4"
-            android:ellipsize="end"
             android:text="@string/default_string"
             android:textColor="@color/white"
             android:textSize="@dimen/small_text_size" />
@@ -105,6 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="6"
+            android:layout_marginTop="10dp"
             android:layout_column="0"
             android:layout_columnSpan="2"
             android:text="@string/default_string"
@@ -128,6 +129,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_row="8"
+            android:layout_marginTop="10dp"
             android:layout_column="0"
             android:layout_columnSpan="2"
             android:text="@string/default_string"
@@ -137,6 +139,7 @@
         <TextView
             android:id="@+id/address_textview"
             android:layout_width="match_parent"
+            android:layout_marginBottom="5dp"
             android:layout_height="wrap_content"
             android:layout_row="9"
             android:layout_column="0"
@@ -151,15 +154,12 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:text="@string/default_string">
+        android:layout_gravity="bottom">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav_menu"
             android:layout_width="match_parent"
-            android:background="@color/white"
             android:layout_height="wrap_content"
-            android:alpha="0.82"
             app:menu="@menu/bottom_nav_menu" />
     </FrameLayout>
 
