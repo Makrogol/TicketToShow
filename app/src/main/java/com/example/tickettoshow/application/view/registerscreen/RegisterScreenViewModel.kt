@@ -1,7 +1,6 @@
 package com.example.tickettoshow.application.view.registerscreen
 
-import android.app.PendingIntent
-import com.example.tickettoshow.application.model.user.DataUser
+import com.example.tickettoshow.application.model.user.api.DataUser
 import com.example.tickettoshow.application.repository.user.UserRepository
 import com.example.tickettoshow.foundation.model.PendingResult
 import com.example.tickettoshow.foundation.navigator.Navigator
@@ -17,18 +16,19 @@ class RegisterScreenViewModel(
     private val userRepository: UserRepository
 ) : BaseViewModel() {
 
-    private val _userRegistered = MutableLiveResult<Unit>(PendingResult())
-    val userRegistered: LiveResult<Unit> = _userRegistered
+    private val _userRegistered = MutableLiveResult<DataUser>(PendingResult())
+    val userRegistered: LiveResult<DataUser> = _userRegistered
 
     private val _userChecked = MutableLiveResult<Boolean>(PendingResult())
     val userChecked: LiveResult<Boolean> = _userChecked
 
 
     fun checkUserByEmail(email: String) = into(_userChecked) {
-        userRepository.checkUserByEmail(email)
+        userRepository.checkEmailIsUnic(email)
     }
 
     fun registerUser(user: DataUser) = into(_userRegistered) {
+        _userRegistered.postValue(PendingResult())
         userRepository.registerUser(user)
     }
 
@@ -36,4 +36,7 @@ class RegisterScreenViewModel(
         navigator.launch(screen)
     }
 
+    fun toast(text: String) {
+        uiActions.toast(text)
+    }
 }

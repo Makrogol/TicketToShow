@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/black"
+    android:orientation="vertical"
     tools:context=".application.view.homescreen.HomeScreenFragment">
 
+    <include layout="@layout/part_result" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/type_event_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_type_event_recyclerview" />
 
-
-    <include layout="@layout/part_result"/>
 
     <FrameLayout
         android:layout_width="match_parent"

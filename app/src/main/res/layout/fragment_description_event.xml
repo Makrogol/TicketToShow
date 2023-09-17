@@ -10,6 +10,7 @@
     <include layout="@layout/part_result" />
 
     <GridLayout
+        android:id="@+id/description_grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="10dp"
@@ -25,6 +26,7 @@
             android:text="@string/default_string"
             android:textColor="@color/white"
             android:textSize="@dimen/big_text_size" />
+
 
         <TextView
             android:id="@+id/place_event_textview"
@@ -72,6 +74,16 @@
             android:src="@drawable/test_img"
             tools:ignore="RtlHardcoded" />
 
+        <ImageView
+            android:id="@+id/favorite_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="right"
+            android:src="@drawable/favorite_off_icon"
+            tools:ignore="RtlHardcoded" />
+
 
         <TextView
             android:id="@+id/description_text_textview"
@@ -80,11 +92,11 @@
             android:layout_row="4"
             android:layout_column="0"
             android:layout_columnSpan="2"
+            android:layout_marginTop="10dp"
             android:ellipsize="end"
-            android:text="@string/default_string"
+            android:text="Описание"
             android:textColor="@color/white"
             android:textSize="@dimen/medium_text_size" />
-
 
         <TextView
             android:id="@+id/description_event_textview"
@@ -93,8 +105,8 @@
             android:layout_row="5"
             android:layout_column="0"
             android:layout_columnSpan="2"
+            android:ellipsize="marquee"
             android:maxLines="4"
-            android:ellipsize="end"
             android:text="@string/default_string"
             android:textColor="@color/white"
             android:textSize="@dimen/small_text_size" />
@@ -107,6 +119,7 @@
             android:layout_row="6"
             android:layout_column="0"
             android:layout_columnSpan="2"
+            android:layout_marginTop="10dp"
             android:text="@string/default_string"
             android:textColor="@color/white"
             android:textSize="@dimen/medium_text_size" />
@@ -130,6 +143,7 @@
             android:layout_row="8"
             android:layout_column="0"
             android:layout_columnSpan="2"
+            android:layout_marginTop="10dp"
             android:text="@string/default_string"
             android:textColor="@color/white"
             android:textSize="@dimen/medium_text_size" />
@@ -141,6 +155,7 @@
             android:layout_row="9"
             android:layout_column="0"
             android:layout_columnSpan="2"
+            android:layout_marginBottom="5dp"
             android:text="@string/default_string"
             android:textColor="@color/white"
             android:textSize="@dimen/small_text_size" />
@@ -151,15 +166,12 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:text="@string/default_string">
+        android:layout_gravity="bottom">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav_menu"
             android:layout_width="match_parent"
-            android:background="@color/white"
             android:layout_height="wrap_content"
-            android:alpha="0.82"
             app:menu="@menu/bottom_nav_menu" />
     </FrameLayout>
 

@@ -1,0 +1,6 @@
+package com.example.tickettoshow.foundation.tools
+
+fun Boolean.toInt(): Int {
+    return if (this) 1
+    else 0
+}

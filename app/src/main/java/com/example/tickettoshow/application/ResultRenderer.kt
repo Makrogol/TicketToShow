@@ -8,10 +8,13 @@ import com.example.tickettoshow.R
 import com.example.tickettoshow.databinding.PartResultBinding
 import com.example.tickettoshow.foundation.views.BaseFragment
 import com.example.tickettoshow.foundation.model.Result
+import com.example.tickettoshow.foundation.views.BaseViewModel
+import java.lang.Exception
 
 fun <T> BaseFragment.renderSimpleResult(
     root: ViewGroup,
     result: Result<T>,
+    onError: (e: Exception) -> Unit,
     onSuccess: (T) -> Unit
 ) {
     val binding = PartResultBinding.bind(root)
@@ -22,7 +25,8 @@ fun <T> BaseFragment.renderSimpleResult(
             binding.progressBar.visibility = View.VISIBLE
         },
         onError = {
-            binding.errorContainer.visibility = View.VISIBLE
+//            binding.errorContainer.visibility = View.VISIBLE
+                  onError(it)
         },
         onSuccess = { successData ->
             root.children

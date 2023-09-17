@@ -16,6 +16,7 @@ import java.lang.reflect.Constructor
 inline fun <reified VM : ViewModel> BaseFragment.screenViewModel() = viewModels<VM> {
     val application = requireActivity().application as BaseApplication
     val screen = requireArguments().getSerializable(ARG_SCREEN) as BaseScreen
+//    val context = requireActivity().applicationContext
 
     val activityScopeViewModel = (requireActivity() as FragmentsHolder).getActivityScopeViewModel()
     val dependencies = listOf(screen, activityScopeViewModel) + application.singletonScopeDependencies

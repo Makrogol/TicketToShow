@@ -41,20 +41,17 @@ class ConcertEventAdapter(
     }
 
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ConcertEventViewHolder, position: Int) {
         holder.itemView.tag = _events[position]
         holder.binding.root.setOnClickListener(this)
 
         val event = _events[position]
         with(holder.binding) {
-
             itemShowPosterImageview.visibility = View.VISIBLE
-            root.setOnClickListener { listener.onEventClick(event) }
-
             itemShowNameTextview.text = event.name
             itemShowAddressTextview.text = event.address
-            itemShowDateTextview.text = event.date
-            itemShowTimeTextview.text = event.time
+            itemShowDateAndTimeTextview.text = "${event.date}\n${event.time}"
             itemShowPosterImageview.setImageResource(event.posterId)
         }
     }
@@ -69,6 +66,8 @@ class ConcertEventAdapter(
 
     interface Listener {
         fun onEventClick(event: DataEvent)
+
+        fun onFavoriteClick(event: DataEvent)
     }
 
 }

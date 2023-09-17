@@ -2,6 +2,7 @@ package com.example.tickettoshow.application.repository.event
 
 import com.example.tickettoshow.application.model.event.DataEvent
 import com.example.tickettoshow.application.model.event.DataEventDescription
+import com.example.tickettoshow.application.model.event.HistoryEvent
 import com.example.tickettoshow.foundation.model.Repository
 
 typealias EventListener = (List<DataEvent>) -> Unit

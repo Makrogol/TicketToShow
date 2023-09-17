@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".application.view.EntryScreenFragment">
+    tools:context=".application.view.entryscreen.EntryScreenFragment">
+
+    <include layout="@layout/part_result" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -87,7 +89,7 @@
 
 
     <ImageButton
-        android:id="@+id/entry_screen_button"
+        android:id="@+id/log_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"

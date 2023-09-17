@@ -15,6 +15,7 @@ class EventsApiImpl : EventsApi {
 
     private var events = mutableListOf<DataEvent>()
 
+
     override fun getEvents(): List<DataEvent> {
         // Тут должен быть завпрос в сеть или в бд
         events = listOf(
@@ -42,9 +43,20 @@ class EventsApiImpl : EventsApi {
                 address = "Дом музыки",
                 posterId = R.drawable.test_img
             ),
+            DataEvent(
+                id = 3,
+                name = "Игорь Бутман",
+                date = "19 сентября",
+                time = "18:00",
+                address = "Дом музыки",
+                posterId = R.drawable.test_img
+            ),
         ).toMutableList()
         return events
     }
+
+
+
 
     override fun getEventById(id: Long): DataEventDescription {
         val event = events.firstOrNull { it.id == id }
@@ -55,7 +67,7 @@ class EventsApiImpl : EventsApi {
                     "лидер собственного коллектива Big Brass Band, успешный представитель духовой" +
                     " музыки: трубач и флюгельгорнист, преемник своего отца, известного трубача " +
                     "Бобана Марковича, харизматичный исполнитель, композитор и аранжировщик. Его " +
-                    "музыка наполнена диким вихрем зажигательных цыгано-балканских мелодий, которые..."
+                    "музыка наполнена диким вихрем зажигательных цыгано-балканских мелодий."
         )
     }
 

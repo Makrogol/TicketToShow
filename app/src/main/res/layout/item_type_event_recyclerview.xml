@@ -26,7 +26,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        style="@style/scrollbar_shape_style"
+        style="@style/scrollbar_home_screen_shape_style"
         android:orientation="horizontal"
         android:scrollbarSize="5dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

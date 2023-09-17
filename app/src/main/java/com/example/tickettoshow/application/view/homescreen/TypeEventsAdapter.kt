@@ -3,10 +3,9 @@ package com.example.tickettoshow.application.view.homescreen
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tickettoshow.application.model.event.DataEvent
+import com.example.tickettoshow.application.model.event.DataTypeEvents
 import com.example.tickettoshow.databinding.ItemTypeEventRecyclerviewBinding
 
 

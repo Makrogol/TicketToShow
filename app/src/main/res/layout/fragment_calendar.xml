@@ -4,13 +4,1516 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".application.view.CalendarFragment">
+    android:background="@color/black"
+    tools:context=".application.view.calendarscreen.CalendarScreenFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Calendar screen"/>
+<!--    <GridLayout-->
+<!--        android:id="@+id/calendar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:rowCount="20"-->
+<!--        android:columnCount="7"-->
+<!--        android:paddingLeft="40dp">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="0"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_columnSpan="7"-->
+<!--            android:layout_marginLeft="80dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:text="@string/calendar_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/left_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="1"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            app:drawableLeftCompat="@drawable/left_arrow_calendar_icon" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/month_year_textview"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="1"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_columnSpan="5"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:text="@string/default_string"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/right_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="1"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            app:drawableLeftCompat="@drawable/right_arrow_calendar_icon" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="2"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_1_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="3"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="4"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="2"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_2_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="3"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="4"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="2"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_3_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="3"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="4"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="2"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_4_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="3"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="4"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="2"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_5_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="3"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="4"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="2"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_6_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="3"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="4"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="2"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_7_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="3"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="4"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="5"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_8_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="6"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="5"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_9_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="6"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="5"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_10_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="6"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="5"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_11_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="6"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="5"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_12_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="6"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="5"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_13_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="6"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="5"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_14_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="6"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="7"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="7"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="7"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="7"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="7"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="7"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="7"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="8"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_15_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="9"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="8"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_16_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="9"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="8"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_17_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="9"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="8"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_18_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="9"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="8"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_19_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="9"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="8"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_20_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="9"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="8"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_21_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="9"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="10"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="10"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="10"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="10"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="10"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="10"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="10"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="11"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_22_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="12"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="11"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_23_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="12"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="11"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_24_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="12"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="11"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_25_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="12"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="11"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_26_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="12"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="11"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_27_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="12"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="11"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_28_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="12"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="13"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="13"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="13"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="13"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="13"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="13"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="13"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="14"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_29_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="15"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="14"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_30_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="15"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="14"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_31_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="15"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="14"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_31_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="15"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="14"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_31_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="15"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="14"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_31_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="15"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="14"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_31_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="15"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="16"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="16"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="16"-->
+<!--            android:layout_column="2"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="16"-->
+<!--            android:layout_column="3"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="16"-->
+<!--            android:layout_column="4"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="16"-->
+<!--            android:layout_column="5"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="16"-->
+<!--            android:layout_column="6"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="17"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_31_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="18"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="19"-->
+<!--            android:layout_column="0"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="17"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/day_31_text"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/very_big_text_size" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_row="18"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:text="@string/tuesday_text"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/big_text_size" />-->
+
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="5dp"-->
+<!--            android:layout_row="19"-->
+<!--            android:layout_column="1"-->
+<!--            android:layout_gravity="center|top"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="........."-->
+<!--            android:textColor="@color/white" />-->
+
+
+<!--    </GridLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        android:layout_marginLeft="70dp"-->
+<!--        android:layout_marginBottom="90dp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:background="@drawable/green_circle_icon" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:background="@drawable/red_circle_icon" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:background="@drawable/yellow_circle_icon" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/ref_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/ref_icon" />-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/ref_layout"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|right"-->
+<!--        android:layout_marginRight="30dp"-->
+<!--        android:layout_marginBottom="100dp"-->
+<!--        android:background="@drawable/bg_ref_layout"-->
+<!--        android:orientation="vertical"-->
+<!--        android:visibility="gone">-->
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:drawableLeft="@drawable/yellow_circle_icon"-->
+<!--            android:text="@string/date_purchased_ticket_text"-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:drawableLeft="@drawable/green_circle_icon"-->
+<!--            android:text="@string/date_current_show_text"-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:drawableLeft="@drawable/red_circle_icon"-->
+<!--            android:text="@string/date_public_holidays_text"-->
+<!--            android:textColor="@color/white" />-->
+
+<!--    </LinearLayout>-->
 
     <FrameLayout
         android:layout_width="match_parent"

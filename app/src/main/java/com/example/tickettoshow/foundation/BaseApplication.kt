@@ -5,5 +5,4 @@ package com.example.tickettoshow.foundation
 interface BaseApplication {
 
     val singletonScopeDependencies: List<Any>
-
 }
